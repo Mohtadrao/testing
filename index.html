@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clearpath — Oil &amp; Gas Manufacturing and EPC Management</title>
+<meta name="description" content="Clearpath delivers high-integrity engineering, fabrication and EPC management for upstream, midstream and downstream operations.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preload" as="image" href="assets/robot.jpg">
+<link rel="preload" as="image" href="assets/worker.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="topbar__brand" href="index.html" aria-label="Clearpath">
+      <img src="assets/logo.png" alt="Clearpath" class="topbar__logo">
+    </a>
+  </header>
+
+  <main class="stage" id="stage" aria-label="Clearpath capabilities — hover or swipe to preview, click to open">
+
+    <img id="robotImg" class="photo photo--robot" src="assets/robot.jpg"
+         alt="Robotic welding arm at work in a Clearpath fabrication facility" draggable="false">
+    <img id="workerImg" class="photo photo--worker" src="assets/worker.jpg"
+         alt="Clearpath technician installing cable tray systems on site" draggable="false">
+
+    <section class="panel panel--oilgas" id="panelOilGas" aria-hidden="true">
+      <div class="panel__inner">
+        <p class="panel__eyebrow">01 — Manufacturing</p>
+        <h2 class="panel__title">Oil and Gas<br>Manufacturing</h2>
+        <p class="panel__copy">High-integrity engineering, fabrication, and supply solutions for upstream, midstream, and downstream operations.</p>
+      </div>
+    </section>
+
+    <section class="panel panel--epc" id="panelEpc" aria-hidden="true">
+      <div class="panel__inner">
+        <p class="panel__eyebrow">02 — Delivery</p>
+        <h2 class="panel__title">EPC<br>Management</h2>
+        <p class="panel__copy">End-to-end project delivery from engineering and procurement to construction and commissioning with precision and control.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Decorative only — purely a visual guide to what hovering/
+       swiping each side does. pointer-events:none so it never
+       blocks clicks/taps reaching the stage underneath; the
+       stage itself remains the only interactive surface. -->
+
+  <nav class="preview-nav" aria-hidden="true">
+    <span class="preview-nav__item" id="labelOil">
+      <span class="preview-nav__arrow">&#8249;</span> Oil &amp; Gas Manufacturing</span>
+    <span class="preview-nav__item preview-nav__item--right" id="labelEpc"> EPC Management <span class="preview-nav__arrow">&#8250;</span>
+    </span>
+  </nav>
+
+  <div class="mobile-guide" id="mobileGuide" aria-hidden="true">
+    <span class="mobile-guide__icon" id="mGuideIcon">&#8645;</span>
+    <span class="mobile-guide__text" id="mGuideText">Swipe up or down</span>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

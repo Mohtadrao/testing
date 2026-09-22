@@ -1,0 +1,48 @@
+# Clearpath — combined site (cPanel / Apache)
+# Layout:  /  (landing)   /manufacturing/   /oilngas/   /shared/
+
+# --- Folder URLs open their index.html --------------------------------
+DirectoryIndex index.html
+
+# Visiting /manufacturing or /oilngas (no trailing slash) redirects to
+# the folder so the pages' relative links resolve correctly.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+</IfModule>
+
+# --- Correct MIME types -----------------------------------------------
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+</IfModule>
+
+# --- Compression -------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/json
+</IfModule>
+
+# --- Browser caching for static assets --------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg  "access plus 1 year"
+  ExpiresByType image/png   "access plus 1 year"
+  ExpiresByType image/webp  "access plus 1 year"
+  ExpiresByType image/avif  "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff   "access plus 1 year"
+  ExpiresByType font/woff2  "access plus 1 year"
+  ExpiresByType text/css    "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  # HTML is not cached so edits show up immediately
+  ExpiresByType text/html   "access plus 0 seconds"
+</IfModule>
+
+# --- Custom 404 (Webflow's 404 page) ----------------------------------
+ErrorDocument 404 /manufacturing/404.html

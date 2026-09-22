@@ -1,0 +1,339 @@
+/* ClearPath Engineering — Manufacturing-only visual repair patch
+   Built on the ORIGINAL site styles. No global Webflow layout rules are overridden.
+*/
+
+.manufacturing-page {
+  overflow-x: hidden;
+}
+
+/* Safe media behavior */
+.manufacturing-page img {
+  max-width: 100%;
+}
+
+/* -------------------------------------------------------------
+   Circular elements -> clean square/rectangular treatment
+   Only the elements that were actually circular in the original
+   manufacturing CSS are changed here.
+   ------------------------------------------------------------- */
+.manufacturing-page .about-info-box,
+.manufacturing-page .about-image-box,
+.manufacturing-page .service-image-two,
+.manufacturing-page .step-info-inner,
+.manufacturing-page .counter-wrap,
+.manufacturing-page .help-line-image {
+  border-radius: 0 !important;
+}
+
+/* Keep circular-number layouts usable after the shape change. */
+.manufacturing-page .about-info-box {
+  overflow: hidden;
+}
+
+.manufacturing-page .about-image-box {
+  object-fit: cover;
+}
+
+.manufacturing-page .step-info-inner,
+.manufacturing-page .counter-wrap {
+  overflow: hidden;
+}
+
+.manufacturing-page .help-line-image {
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------------
+   Balanced image sizing
+   The original Webflow grid/spacing is preserved; only image
+   boxes are given stable proportions so one image cannot stretch
+   an entire row while its text becomes visually insignificant.
+   ------------------------------------------------------------- */
+.manufacturing-page .service-image-wrap {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.manufacturing-page .service-image-wrap .service-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manufacturing-page .product-image-wrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.manufacturing-page .product-image-wrapper .product-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manufacturing-page .industry-image-wrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.manufacturing-page .industry-image-wrapper .industry-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Prevent flex/grid children from forcing horizontal overflow. */
+.manufacturing-page .service-info-inner > *,
+.manufacturing-page .service-image-main > *,
+.manufacturing-page .service-content-wrap > *,
+.manufacturing-page .product-info-main,
+.manufacturing-page .industry-content-info > *,
+.manufacturing-page .about-info-inner > * {
+  min-width: 0;
+}
+
+.manufacturing-page .service-name,
+.manufacturing-page .product-name,
+.manufacturing-page .industry-name,
+.manufacturing-page .service-description,
+.manufacturing-page .product-description,
+.manufacturing-page .industry-description {
+  overflow-wrap: anywhere;
+}
+
+/* -------------------------------------------------------------
+   Responsive image proportions
+   ------------------------------------------------------------- */
+@media screen and (max-width: 991px) {
+  .manufacturing-page .service-image-wrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .manufacturing-page .product-image-wrapper,
+  .manufacturing-page .industry-image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .manufacturing-page .service-image-wrap,
+  .manufacturing-page .product-image-wrapper,
+  .manufacturing-page .industry-image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Keep rectangular info blocks readable on narrow screens. */
+  .manufacturing-page .about-info-box {
+    height: auto;
+    min-height: 220px;
+    padding: 1.5rem;
+  }
+
+  .manufacturing-page .step-info-inner {
+    height: auto;
+    min-height: 190px;
+    padding: 1.5rem;
+  }
+
+  .manufacturing-page .counter-wrap {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .manufacturing-page .help-line-image {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .manufacturing-page .about-info-box {
+    min-height: 190px;
+    padding: 1.25rem;
+  }
+
+  .manufacturing-page .step-info-inner {
+    min-height: 165px;
+    padding: 1.25rem;
+  }
+}
+
+/* V4 — home Manufacturing service stack.
+   Preserve the original scroll-stacking interaction, but make every panel the
+   same full width/height so each incoming service cleanly covers the previous. */
+@media screen and (min-width: 992px) {
+  .manufacturing-page .service-section .service-info {
+    align-items: stretch;
+  }
+
+  .manufacturing-page .service-section .service-list-wrapper {
+    width: 100%;
+    align-self: stretch;
+    top: 96px !important;
+  }
+
+  .manufacturing-page .service-section .service-list,
+  .manufacturing-page .service-section .service-list-item,
+  .manufacturing-page .service-section .service-info-link {
+    width: 100%;
+  }
+
+  .manufacturing-page .service-section .service-info-link {
+    min-height: 360px;
+    height: 360px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .manufacturing-page .service-section .service-info-inner {
+    min-height: 0;
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .manufacturing-page .service-section .service-image-main,
+  .manufacturing-page .service-section .service-image-wrap {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .manufacturing-page .service-section .service-image-wrap {
+    aspect-ratio: auto;
+  }
+
+  .manufacturing-page .service-section .service-image-wrap .service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .manufacturing-page .service-section .service-content-wrap {
+    align-content: center;
+    min-height: 0;
+  }
+}
+
+/* Tablet/mobile: normal document flow is clearer than a sticky stack. */
+@media screen and (max-width: 991px) {
+  .manufacturing-page .service-section .service-list-wrapper {
+    width: 100%;
+    position: relative;
+    top: auto !important;
+  }
+}
+
+/* V5 — CTA containment fixes from supplied screenshots.
+   The original CTA component is only 176px tall and a 2-column grid; the
+   added manufacturing copy needs an auto-height layout so it stays inside
+   the background instead of overlapping the footer/white page. */
+.manufacturing-page .service-cta-main {
+  overflow: visible;
+  padding-bottom: 4.375rem;
+}
+
+.manufacturing-page .service-cta-main .cta-info-wrapper {
+  width: min(1078px, 100%);
+  max-width: 100%;
+  height: auto;
+  min-height: 250px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.manufacturing-page .service-cta-main .cta-info-inner {
+  width: 100%;
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1.15fr);
+  grid-template-rows: auto auto;
+  column-gap: clamp(2rem, 5vw, 5rem);
+  row-gap: 1rem;
+  align-items: center;
+  padding: 2.5rem 2.813rem;
+}
+
+/* Services CTA: title occupies the left side; copy + action remain on right. */
+.manufacturing-page .service-cta-main .cta-info-inner > .cta-text {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+.manufacturing-page .service-cta-main .cta-info-inner > .about-hero-description {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  max-width: none !important;
+  margin: 0 !important;
+  color: rgba(255,255,255,.82) !important;
+}
+
+.manufacturing-page .service-cta-main .cta-info-inner > .cta-button {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  justify-self: start;
+}
+
+/* About CTA contains an eyebrow before the title, so use one centered column. */
+.manufacturing-page body.about-page .service-cta-main .cta-info-inner,
+.manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: 330px;
+  padding: 2.75rem clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) > .cta-text,
+.manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) > .about-hero-description,
+.manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) > .cta-button {
+  width: auto;
+  margin: 0 !important;
+  align-self: auto;
+}
+
+.manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) > .about-hero-description {
+  max-width: 640px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .manufacturing-page .service-cta-main {
+    padding-bottom: 3.125rem;
+  }
+
+  .manufacturing-page .service-cta-main .cta-info-wrapper {
+    min-height: 0;
+  }
+
+  .manufacturing-page .service-cta-main .cta-info-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .manufacturing-page .service-cta-main .cta-info-inner > .cta-text,
+  .manufacturing-page .service-cta-main .cta-info-inner > .about-hero-description,
+  .manufacturing-page .service-cta-main .cta-info-inner > .cta-button {
+    width: 100%;
+  }
+
+  .manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) {
+    align-items: flex-start;
+    min-height: 0;
+    text-align: left;
+  }
+
+  .manufacturing-page .service-cta-main .cta-info-inner:has(.pre-section-title-wrap) > .cta-button {
+    justify-content: flex-start !important;
+  }
+}
