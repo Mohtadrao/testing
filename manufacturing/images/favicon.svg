@@ -1,15 +1,18 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1032_135)">
-<rect width="32" height="32" rx="3" fill="#F6F6F6"/>
-<path d="M6.11736 25V6.046H11.5514L14.6454 15.432L15.9194 20.268H16.1014L17.3754 15.432L20.4434 6.046H25.8774V25H22.5494V15.822L22.6534 9.244H22.4454L20.5994 15.354L17.4794 25H14.5414L11.4474 15.354L9.57536 9.244H9.36736L9.47136 15.822V25H6.11736Z" fill="url(#paint0_linear_1032_135)"/>
-</g>
-<defs>
-<linearGradient id="paint0_linear_1032_135" x1="6.2881" y1="4.40235" x2="17.254" y2="21.5366" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FE531F"/>
-<stop offset="1" stop-color="#9E3211"/>
-</linearGradient>
-<clipPath id="clip0_1032_135">
-<rect width="32" height="32" rx="3" fill="white"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 208.2 190.7" style="enable-background:new 0 0 208.2 190.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#173E84;stroke-width:40.6858;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#ED3136;stroke-width:0.9979;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#ED3136;stroke-width:0.5052;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FC1010;stroke-width:12;stroke-miterlimit:10;}
+	.st4{fill:#ED3136;}
+	.st5{fill:#1F1F1F;}
+	.st6{fill:#FFFFFF;}
+</style>
+<path class="st4" d="M95,138.9c-22-2.4-39.2-19.8-39.2-40.6v-2.5l-26.5,24.3L8.9,101.5c0.2,44.5,39.8,80.9,88.3,81.2l22.7-20.9
+	L95,138.9z M74.7,28.2L98.2,6.6h-0.5C48.9,6.6,8.9,43.3,8.9,88.1v2.3l20.3,18.6l27.1-24.9v0c3.5-18.8,21-33.3,42.2-34.1L74.7,28.2z
+	 M110.3,6.6L86.8,28.2l24,22c22,1.7,39.6,18.3,40.8,38.7l23.3-21.4l23.5,21.6v-1C198.4,43.5,158.8,6.9,110.3,6.6z M174.9,78.6
+	L151.6,100c-1,21.6-20.5,39.1-44.2,39.3l24.6,22.6l-22.8,20.9h0.4c48.8,0,88.8-36.7,88.8-81.5v-1L174.9,78.6z"/>
 </svg>

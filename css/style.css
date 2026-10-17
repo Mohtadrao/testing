@@ -227,7 +227,7 @@ button{
    (swipe up / swipe down), matching the source mockups.
    ========================================================= */
 
-@media (max-width: 767px){
+@media (max-width: 1024px){
 
   :root{
     --topbar-h: 64px;
@@ -309,4 +309,30 @@ button{
 
   .panel__title{ font-size: clamp(24px, 7.6vw, 34px); }
   .panel__copy{ font-size: 13.5px; }
+}
+
+
+/* Client-requested landing-only update (Manufacturing and EPC styles are untouched). */
+.topbar__brand{
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 2px 18px rgba(0,0,0,.10);
+}
+.topbar__logo{height:clamp(31px,3.4vw,40px);max-width:min(54vw,245px);object-fit:contain;}
+.preview-nav{height:105px;gap:16px;}
+.preview-nav__item{font-family:var(--font-display);font-size:clamp(14px,1.15vw,18px);font-weight:700;letter-spacing:.015em;gap:14px;white-space:nowrap;color:var(--ink);}
+.preview-nav__item--right{flex-direction:row;}
+.preview-nav__arrow{
+  width:clamp(48px,4.7vw,66px);height:clamp(48px,4.7vw,66px);
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  font-size:clamp(34px,3.4vw,48px);font-weight:700;
+  line-height:1;background:var(--red-text);color:#fff;border-radius:50%;
+  box-shadow:0 4px 14px rgba(90,25,40,.19);
+}
+@media (max-width:1024px){
+  /* The original vertical-swipe experience: no horizontal arrows or new stacked buttons. */
+  .preview-nav{display:none;}
+  .topbar__logo{height:clamp(26px,4vw,35px);max-width:60vw;}
+  .mobile-guide{display:flex;}
 }
