@@ -38,7 +38,7 @@
     epc:    { icon: '\u25BC', text: 'Oil & Gas Manufacturing' }      // ▼
   };
 
-  var PAGES = { oilgas: 'manufacturing/index.html', epc: 'oilngas/index.html' };
+  var PAGES = { oilgas: 'oilngas/index.html', epc: 'manufacturing/index.html' };
   var STATE_P = { oilgas: -1, home: 0, epc: 1 };
 
   var CFG = {
@@ -77,7 +77,7 @@
     var t = clamp((x - edge0) / (edge1 - edge0), 0, 1);
     return t * t * (3 - 2 * t);
   }
-  function isMobile() { return window.innerWidth < 768; }
+  function isMobile() { return window.innerWidth <= 1024; }
 
   function setState(key) {
     state = key;
@@ -86,6 +86,9 @@
 
     labelOil.classList.toggle('is-active', key === 'oilgas');
     labelEpc.classList.toggle('is-active', key === 'epc');
+    // hide the label that sits over the previewed photo
+    labelEpc.classList.toggle('is-hidden', key === 'oilgas');
+    labelOil.classList.toggle('is-hidden', key === 'epc');
     mGuideIcon.textContent = GUIDE[key].icon;
     mGuideText.textContent = GUIDE[key].text;
   }
@@ -257,8 +260,9 @@
     stage.addEventListener('mouseleave', onHoverLeave);
   }
 
-  stage.addEventListener('click', function () {
-    if (isMobile()) return; // mobile handles open-on-tap in endDrag
+  stage.addEventListener('click', function (e) {
+    if (isMobile()) return; // tablet/mobile retains the original swipe-to-preview, tap-to-enter
+    if (state === 'home') setState(e.clientX < window.innerWidth / 2 ? 'oilgas' : 'epc');
     openCurrent();
   });
 
