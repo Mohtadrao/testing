@@ -463,8 +463,9 @@ details.cp-svc[open] { border-color:#ed3039; }
 .cp-svc-link { display:inline-block; margin-top:14px; color:#ed3039; font-weight:600; font-size:13px; text-decoration:none; }
 
 /* Dark section: show the machine fully (image has transparent top, so anchor it bottom-right) */
-.why-choose-info { background-color:#000 !important; background-size:auto 100% !important; background-position:right bottom !important; }
-@media (max-width:991px){ .why-choose-info { background-size:auto 70% !important; background-position:center bottom !important; } }
+/* "Fix BG image, make machine more visible": machine-only crop, shown whole */
+.why-choose-info { background:#000 url("../images/why-machine.webp") right 6% bottom / auto 94% no-repeat !important; }
+@media (max-width:991px){ .why-choose-info { background-size:auto 46% !important; background-position:center bottom !important; padding-bottom:78vw !important; } }
 
 /* Footer layout: links stay compact, contact info sits in a clean 3-column row */
 .grid-footer { grid-template-columns:.8fr 1.2fr !important; align-items:start !important; }
@@ -562,3 +563,43 @@ details.cp-svc summary { min-height:64px; }
 .cp-modal-media { align-items:flex-start !important; }
 .cp-modal-media img { position:sticky; top:0; -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 52%, transparent 65%); mask-image:radial-gradient(circle at 50% 50%, #000 52%, transparent 65%); }
 @media (max-width:767px){ .cp-modal-media img { max-width:320px; margin:0 auto; } }
+
+/* Homepage "Who We Are": new two-column layout (homepage note) */
+.cp-who { position:relative; padding:110px 0 120px; background:#f6f5f3; }
+.cp-who-grid { display:grid; grid-template-columns:1fr 1.05fr; gap:64px; align-items:center; }
+.cp-who-text .section-title { margin:18px 0 22px; }
+.cp-who-text .about-description { max-width:560px; margin:0 0 32px; font-size:17px; line-height:1.65; color:#444; }
+.cp-who-text .about-button-wrap { display:flex; flex-wrap:wrap; align-items:center; gap:24px; }
+.cp-who-visual { position:relative; }
+.cp-who-photo { display:block; width:100%; height:380px; object-fit:cover; }
+.cp-who-stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; margin:-70px 0 0 40px; position:relative; background:#ddd; box-shadow:0 20px 50px rgba(0,0,0,.12); }
+.cp-who-stat { background:#fff; padding:24px 26px; }
+.cp-who-stat-dark { background:#111; }
+.cp-who-num { font-size:34px; font-weight:700; line-height:1.1; color:#5c3193; }
+.cp-who-stat-dark .cp-who-num { font-size:22px; color:#fff; }
+.cp-who-stat-dark .cp-who-num span { color:#ed3039; }
+.cp-who-label { margin-top:8px; font-size:14px; line-height:1.45; color:#555; }
+.cp-who-stat-dark .cp-who-label { color:rgba(255,255,255,.8); }
+@media (max-width:991px){ .cp-who-grid { grid-template-columns:1fr; gap:48px; } .cp-who-stats { margin:-50px 16px 0; } }
+@media (max-width:479px){ .cp-who { padding:72px 0; } .cp-who-photo { height:260px; } .cp-who-stats { grid-template-columns:1fr; margin:-30px 0 0; } .cp-who-num { font-size:28px; } }
+
+/* "Fix the font here": clearer ClearPath card + statement over the photo slideshow */
+.hero-video-wrap .hero-quote-card { padding:16px 28px; border:1px solid rgba(255,255,255,.28); background:rgba(0,0,0,.38); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); }
+.hero-video-wrap .quote-founder-name { font-size:24px; font-weight:700; color:#fff; letter-spacing:.02em; line-height:1.2; }
+.hero-video-wrap .quote-founder-job { margin-top:6px; font-size:12px; font-weight:600; color:#ff5a62; text-transform:uppercase; letter-spacing:.14em; }
+.hero-video-wrap .quote-description { max-width:760px; margin-top:26px; font-size:clamp(18px,1.7vw,25px); line-height:1.5; font-weight:500; color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.55); }
+.hero-video-wrap .quote-description * { color:inherit !important; background:none !important; -webkit-text-fill-color:currentColor !important; }
+.cp-industry-photo { width:100%; height:100%; min-height:260px; object-fit:cover; display:block; }
+
+/* Product line drawings (stand-in for the client's drawing) */
+.cp-drawing { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; align-items:end; margin:56px 0 24px; }
+.cp-draw-item { margin:0; text-align:center; }
+.cp-draw-img { height:260px; display:flex; align-items:flex-end; justify-content:center; }
+.cp-draw-img img { max-height:100%; max-width:90%; width:auto; height:auto; }
+.cp-draw-item figcaption { display:flex; flex-direction:column; align-items:center; margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,.18); position:relative; }
+.cp-draw-dot { position:absolute; top:-8px; width:14px; height:14px; border-radius:50%; border:3px solid #ed3039; background:#1b1b1b; }
+.cp-draw-name { color:#fff; font-size:17px; font-weight:600; }
+.cp-draw-sub { margin-top:4px; color:rgba(255,255,255,.6); font-size:13px; }
+@media (max-width:767px){ .cp-drawing { grid-template-columns:repeat(2,1fr); gap:28px 16px; } .cp-draw-img { height:170px; } }
+.hero-video-wrap .hero-quote-card { min-width:380px; text-align:center; }
+@media (max-width:479px){ .hero-video-wrap .hero-quote-card { min-width:0; width:100%; } }

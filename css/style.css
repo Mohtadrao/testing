@@ -336,7 +336,6 @@ button{
   .topbar__logo{height:clamp(26px,4vw,35px);max-width:60vw;}
   .mobile-guide{display:flex;}
 }
-<<<<<<< HEAD
 
 /* Landing: no white band over the photos; each label is a compact chip,
    and the label lying over the previewed photo hides on hover. */
@@ -348,4 +347,3 @@ button{
 }
 .preview-nav__item--right{ padding:6px 18px 6px 8px; }
 .preview-nav__item.is-hidden{ opacity:0; }
-=======
