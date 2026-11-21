@@ -506,7 +506,7 @@ details.cp-svc summary { min-height:64px; }
 .about-box-logo { width:130px !important; height:auto !important; margin-bottom:1.25rem !important; }
 .cp-product-thumb img { width:55% !important; opacity:.9 !important; }
 .cp-modal-media img { width:55% !important; opacity:.95 !important; }
-.service-detail-image[alt="CNC Machining"] { object-position:50% 74%; }
+.service-detail-image[alt="CNC Machining"] { object-position:50% 45%; }
 /* CTA banner: stretch across the full content width (homepage note) */
 .cta-wrap { width:100%; }
 .cta-wrap .cta-info-wrapper { width:100% !important; max-width:none !important; height:auto !important; min-height:200px; padding:36px 0; background-size:cover; }
@@ -603,3 +603,7 @@ details.cp-svc summary { min-height:64px; }
 @media (max-width:767px){ .cp-drawing { grid-template-columns:repeat(2,1fr); gap:28px 16px; } .cp-draw-img { height:170px; } }
 .hero-video-wrap .hero-quote-card { min-width:380px; text-align:center; }
 @media (max-width:479px){ .hero-video-wrap .hero-quote-card { min-width:0; width:100%; } }
+.cp-value-icon { width:26px !important; height:26px !important; }
+.cp-story-photo { object-fit:cover; width:100%; aspect-ratio:4/5; height:auto; }
+/* Services page: equal-height card photos */
+.service-image-inner { width:100% !important; height:240px !important; object-fit:cover !important; }
