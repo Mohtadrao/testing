@@ -616,23 +616,17 @@ details.cp-svc summary { min-height:64px; }
 .hero-left-wrap { width:100% !important; max-width:none !important; }
 .grid-hero { grid-template-columns:1fr !important; }
 
-/* Homepage service stack (all 13): same hover on every card */
-.service-section .service-arrow { overflow:hidden; }
-.service-section .service-icon-01, .service-section .service-hover-icon { transition:transform .35s ease; }
-.service-section .service-hover-icon { transform:translateX(-36px); }
-.service-section .service-info-link:hover .service-icon-01 { transform:translateX(36px); }
-.service-section .service-info-link:hover .service-hover-icon { transform:translateX(0); }
+/* Homepage service stack: plus/minus toggle in place of the arrow */
 .service-section .service-image-wrap { overflow:hidden; }
 .service-section .service-image { transform:none !important; transition:transform .5s ease; }
 .service-section .service-info-link:hover .service-image { transform:scale(1.05) !important; }
+.service-section .cp-toggle { cursor:pointer; flex:none; }
+.cp-pm { position:relative; width:16px; height:16px; display:block; }
+.cp-pm::before, .cp-pm::after { content:""; position:absolute; left:0; top:7px; width:16px; height:2px; background:#fff; border-radius:2px; transition:transform .3s ease; }
+.cp-pm::after { transform:rotate(90deg); }
+.service-info-link.is-open .cp-pm::after { transform:rotate(0deg); }
+.service-section .service-feature-list { max-height:0; overflow:hidden; opacity:0; transition:max-height .4s ease, opacity .3s ease; }
+.service-section .service-info-link.is-open .service-feature-list { max-height:320px; opacity:1; }
 
-/* Quality section: certificate pictures above their names */
-.cp-cert-cards { display:flex; flex-wrap:wrap; gap:28px; margin-top:36px; }
-.cp-cert-card { width:230px; display:flex; flex-direction:column; color:#fff; text-decoration:none; }
-.cp-cert-thumb { display:block; padding:8px; background:#fff; border:1px solid rgba(255,255,255,.2); box-shadow:0 10px 30px rgba(0,0,0,.45); transition:transform .3s ease, box-shadow .3s ease; }
-.cp-cert-thumb img { display:block; width:100%; height:auto; }
-.cp-cert-card:hover .cp-cert-thumb { transform:translateY(-4px); box-shadow:0 16px 36px rgba(237,48,57,.35); }
-.cp-cert-name { margin-top:14px; font-size:15px; font-weight:600; line-height:1.35; }
-.cp-cert-dl { margin-top:4px; font-size:13px; color:#ff5a62; }
-.cp-cert-card:hover .cp-cert-dl { text-decoration:underline; }
-@media (max-width:479px){ .cp-cert-cards { gap:16px; } .cp-cert-card { width:calc(50% - 8px); } .cp-cert-name { font-size:13px; } }
+/* Headset icon removed site-wide: let card photo and support text sit flush */
+.service-section .service-image-main { grid-template-columns:1fr !important; gap:0 !important; }
