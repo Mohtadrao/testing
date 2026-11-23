@@ -607,3 +607,32 @@ details.cp-svc summary { min-height:64px; }
 .cp-story-photo { object-fit:cover; width:100%; aspect-ratio:4/5; height:auto; }
 /* Services page: equal-height card photos */
 .service-image-inner { width:100% !important; height:240px !important; object-fit:cover !important; }
+
+/* Client's exploded CAD drawing (D.I collar + set screws) */
+.cp-drawing-cad { margin:56px auto 24px; max-width:860px; text-align:center; }
+.cp-drawing-cad img { width:100%; height:auto; display:block; margin:0 auto; }
+@media (max-width:767px){ .cp-drawing-cad { margin:36px auto 16px; } }
+/* Hero without right column: let the title use the full width */
+.hero-left-wrap { width:100% !important; max-width:none !important; }
+.grid-hero { grid-template-columns:1fr !important; }
+
+/* Homepage service stack (all 13): same hover on every card */
+.service-section .service-arrow { overflow:hidden; }
+.service-section .service-icon-01, .service-section .service-hover-icon { transition:transform .35s ease; }
+.service-section .service-hover-icon { transform:translateX(-36px); }
+.service-section .service-info-link:hover .service-icon-01 { transform:translateX(36px); }
+.service-section .service-info-link:hover .service-hover-icon { transform:translateX(0); }
+.service-section .service-image-wrap { overflow:hidden; }
+.service-section .service-image { transform:none !important; transition:transform .5s ease; }
+.service-section .service-info-link:hover .service-image { transform:scale(1.05) !important; }
+
+/* Quality section: certificate pictures above their names */
+.cp-cert-cards { display:flex; flex-wrap:wrap; gap:28px; margin-top:36px; }
+.cp-cert-card { width:230px; display:flex; flex-direction:column; color:#fff; text-decoration:none; }
+.cp-cert-thumb { display:block; padding:8px; background:#fff; border:1px solid rgba(255,255,255,.2); box-shadow:0 10px 30px rgba(0,0,0,.45); transition:transform .3s ease, box-shadow .3s ease; }
+.cp-cert-thumb img { display:block; width:100%; height:auto; }
+.cp-cert-card:hover .cp-cert-thumb { transform:translateY(-4px); box-shadow:0 16px 36px rgba(237,48,57,.35); }
+.cp-cert-name { margin-top:14px; font-size:15px; font-weight:600; line-height:1.35; }
+.cp-cert-dl { margin-top:4px; font-size:13px; color:#ff5a62; }
+.cp-cert-card:hover .cp-cert-dl { text-decoration:underline; }
+@media (max-width:479px){ .cp-cert-cards { gap:16px; } .cp-cert-card { width:calc(50% - 8px); } .cp-cert-name { font-size:13px; } }
