@@ -630,3 +630,19 @@ details.cp-svc summary { min-height:64px; }
 
 /* Headset icon removed site-wide: let card photo and support text sit flush */
 .service-section .service-image-main { grid-template-columns:1fr !important; gap:0 !important; }
+
+/* Quality proof row: certificate picture above the red line, name below */
+.cp-quality .cp-proof { grid-template-columns:repeat(5,1fr); align-items:start; }
+.cp-quality .cp-proof > div { border-top:0; padding-top:0; display:flex; flex-direction:column; }
+.cp-proof-media { height:150px; display:flex; align-items:flex-end; margin-bottom:12px; padding-bottom:12px; border-bottom:2px solid #ed3039; }
+.cp-proof-cert { display:block; width:112px; padding:4px; background:#fff; box-shadow:0 8px 22px rgba(0,0,0,.45); transition:transform .25s ease, box-shadow .25s ease; }
+.cp-proof-cert img { display:block; width:100%; height:auto; }
+.cp-proof-cert:hover { transform:translateY(-3px); box-shadow:0 12px 26px rgba(237,48,57,.35); }
+.cp-proof-dl { margin-top:6px; font-size:12px; color:#ff5a62; text-decoration:none; }
+.cp-proof-dl:hover { text-decoration:underline; }
+@media (max-width:767px){
+  .cp-quality .cp-proof { grid-template-columns:1fr 1fr; gap:24px 16px; }
+  .cp-proof-media { height:auto; min-height:0; }
+  .cp-proof-media:empty { padding-bottom:0; }
+  .cp-proof-cert { width:96px; }
+}
